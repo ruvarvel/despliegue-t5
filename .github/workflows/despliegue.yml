@@ -15,6 +15,8 @@ jobs:
           php-version: '8.3'
       - name: Install dependencies
         run: composer install
+      - name: Give execute permission to PHPUnit
+        run: chmod +x ./vendor/bin/phpunit
       - name: Run tests
         run: ./vendor/bin/phpunit tests
   deploy:
